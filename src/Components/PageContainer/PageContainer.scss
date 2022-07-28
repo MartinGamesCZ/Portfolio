@@ -1,0 +1,21 @@
+@import "../../Config.scss";
+
+.page-container {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.page {
+    overflow: hidden;
+    background: $colors_primary;
+    height: calc(100vh - 64px);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $colors_accent;
+}
