@@ -1,0 +1,46 @@
+$colors_primary: #161616;
+$colors_text: #fff;
+$colors_text_secondary: #aaa;
+$colors_text_active: #23aaa8;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $colors_primary;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: $colors_text;
+  font-size: 100px;
+}
+
+p {
+  position: fixed;
+  bottom: 50px;
+  color: $colors_text_secondary;
+  text-align: center;
+  left: 50vw;
+  transform: translateX(-50%);
+}
+
+a {
+  color: $colors_text;
+  text-decoration: none;
+
+  transition: .2s;
+
+  &:hover {
+    color: $colors_text_active;
+  }
+}
