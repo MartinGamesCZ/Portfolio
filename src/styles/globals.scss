@@ -1,46 +1,29 @@
-$colors_primary: #161616;
-$colors_text: #fff;
-$colors_text_secondary: #aaa;
-$colors_text_active: #23aaa8;
+@import "./config.scss";
 
+// Pre-set styles for every element
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+// Body styles
 body {
-  background-color: $colors_primary;
-
   width: 100vw;
-  height: 100vh;
+  height: 300vh;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-h1 {
-  color: $colors_text;
-  font-size: 100px;
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-p {
-  position: fixed;
-  bottom: 50px;
-  color: $colors_text_secondary;
-  text-align: center;
-  left: 50vw;
-  transform: translateX(-50%);
+::-webkit-scrollbar-track {
+  background: $colors_bg_lighter;
 }
 
-a {
-  color: $colors_text;
-  text-decoration: none;
-
-  transition: .2s;
-
-  &:hover {
-    color: $colors_text_active;
-  }
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, #fff 10%, $colors_bg_lighter);
 }

@@ -1,0 +1,152 @@
+@import "../../styles/config.scss";
+
+// Navbar styles
+.main {
+  // Set fixed position on the top right side
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+// Vertical line
+.vertical_line {
+  // Set size
+  height: calc(100vh - (5px * 7) * 2);
+  width: 3px;
+
+  // Set color
+  background: $colors_primary;
+
+  // Make corners rounded
+  border-radius: 3px;
+
+  // Set fixed position and align it to specific position
+  position: fixed;
+  top: calc(5px * 7);
+  right: 25px;
+}
+
+// Vertical line dots styles
+.vline_dots {
+  width: 5px;
+  height: calc(5px * (3 + 2));
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  right: 24px;
+
+  span {
+    display: block;
+
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    
+    
+    &:nth-child(1) {
+      background: $colors_primary;
+    }
+    
+    &:nth-child(2) {
+      background: color-mix(in srgb, $colors_bg_lighter 50%, $colors_primary 50%);
+    }
+    
+    &:nth-child(3) {
+      background: $colors_bg_lighter;
+    }
+  }
+}
+
+.vline_dots_bottom {
+  bottom: 5px;
+}
+
+.vline_dots_top {
+  top: 5px;
+
+  flex-direction: column-reverse;
+}
+
+// Link group
+.links {
+  // Set link alignment
+  display: flex;
+  flex-direction: column;
+  gap: calc((100vh - 2*120px) / 3);
+  justify-content: center;
+  align-items: flex-end;
+
+  // Set fixed position and align it to specific position
+  position: fixed;
+  top: 50vh;
+  right: 25px;
+  transform: translateY(-50%);
+
+  // Remove bullets from list
+  list-style: none;
+}
+
+// Link styles
+.link_main {
+  // Set children alignment
+  display: flex;
+  flex-direction: row;  
+  align-items: center;
+  justify-content: flex-end;
+
+  // Set relative position
+  position: relative;
+}
+
+// Link dot styles
+.link_dot {
+  // Set size
+  height: 20px;
+  width: 20px;
+
+  // Set color
+  background: $colors_primary;
+
+  // Make corners rounded
+  border-radius: 50%;
+
+  // Add border
+  border: 4px solid $colors_bg;
+
+  // Set position
+  position: absolute;
+  right: 1px;
+  transform: translateX(50%);
+
+  // Remove bullets from list
+  list-style: none;
+
+  transition: .4s;
+
+  &[data-active="true"] {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+// Link text styles
+.link_anchor {
+  margin-right: 18px;
+  color: #ccc;
+  text-decoration: none;
+
+  transition: .4s;
+
+  &[data-active="true"] {
+    color: $colors_primary;
+
+    font-size: larger;
+    font-weight: bold;
+
+    margin-right: 20px;
+  }
+}
