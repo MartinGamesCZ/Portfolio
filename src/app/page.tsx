@@ -1,3 +1,9 @@
+import PageRoot from "@/components/PageRoot/PageRoot";
+
 export default function Page() {
-  return <h1>Hello world!</h1>;
+  return (
+    <PageRoot>
+      <h1>Hello world!</h1>
+    </PageRoot>
+  );
 }

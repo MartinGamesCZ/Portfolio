@@ -1,0 +1,8 @@
+@import "@/styles/config.scss";
+
+.root {
+  background: $stl_color_background;
+
+  width: 100vw;
+  height: calc(100vh - $cfg_navbar_height);
+}
