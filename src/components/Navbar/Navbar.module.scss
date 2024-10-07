@@ -1,0 +1,111 @@
+@import "@/styles/config.scss";
+
+.root {
+  width: 100vw;
+  height: $cfg_navbar_height;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 $stl_padding_lg;
+
+  background: $stl_color_background;
+
+  .branding {
+    .name {
+      font-size: $stl_text_xxl;
+      color: $stl_color_text;
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+
+    .link {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: $stl_padding_sm;
+
+      height: 100%;
+
+      padding: 0 $stl_padding_md;
+
+      cursor: pointer;
+
+      .decoration {
+        width: 7px;
+        height: 7px;
+
+        border-radius: 50%;
+
+        transition: background 0.3s;
+      }
+
+      &[data-cn="0"] {
+        .decoration {
+          background: rgba($stl_color_primary, 75%);
+        }
+      }
+
+      &[data-cn="1"] {
+        .decoration {
+          background: rgba($stl_color_primary_2, 75%);
+        }
+      }
+
+      &[data-cn="2"] {
+        .decoration {
+          background: rgba($str_color_primary_3, 75%);
+        }
+      }
+
+      .link_anchor {
+        color: $stl_color_text_light;
+        font-size: $stl_text_lg;
+        text-decoration: none;
+
+        transition: color 0.3s;
+
+        height: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &:hover {
+        &[data-cn="0"] {
+          .decoration {
+            background: $stl_color_primary;
+          }
+        }
+
+        &[data-cn="1"] {
+          .decoration {
+            background: $stl_color_primary_2;
+          }
+        }
+
+        &[data-cn="2"] {
+          .decoration {
+            background: $str_color_primary_3;
+          }
+        }
+
+        .link_anchor {
+          color: $stl_color_text;
+        }
+      }
+    }
+  }
+}
