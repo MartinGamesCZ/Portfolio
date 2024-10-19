@@ -5,6 +5,14 @@ export default function Page() {
   return (
     <PageRoot>
       <Heading />
+      <div
+        style={{
+          height: "100vh",
+          backgroundColor: "white",
+        }}
+      >
+        Content
+      </div>
     </PageRoot>
   );
 }
