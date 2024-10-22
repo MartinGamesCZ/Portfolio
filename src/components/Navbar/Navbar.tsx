@@ -1,9 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./Navbar.module.scss";
 
 export default function Navbar() {
   return (
-    <nav className={styles.root}>
+    <nav className={styles.root} data-fixed>
       <div className={styles.branding}>
         <h4 className={styles.name}>Martin Petr</h4>
       </div>
