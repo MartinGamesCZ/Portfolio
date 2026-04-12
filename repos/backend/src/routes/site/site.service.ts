@@ -1,5 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import type { ISiteNavbarConfig } from '../../types/api/site.js';
+import type {
+  ISiteHeroConfig,
+  ISiteNavbarConfig,
+} from '../../types/api/site.js';
 
 @Injectable()
 export class SiteService {
@@ -29,6 +32,28 @@ export class SiteService {
           href: 'https://github.com/MartinGamesCZ',
         },
       ],
+    };
+
+    return config;
+  }
+
+  async getHeroConfig(): Promise<ISiteHeroConfig> {
+    // TODO: Read from DB
+    const config: ISiteHeroConfig = {
+      topHintText: 'Software is the backbone of society.',
+      topSubHeading: 'My name is',
+      heading: 'Martin Petr',
+      bottomSubHeading: 'I am a software engineer.',
+      bottomHintText: 'Frontend. Backend. Infrastructure.',
+      firstButton: {
+        text: 'Contact me',
+        href: '/contact',
+      },
+      secondButton: {
+        text: 'Learn more',
+        href: '/about',
+      },
+      sshCommand: 'ssh martinpetr.dev -p 2222',
     };
 
     return config;

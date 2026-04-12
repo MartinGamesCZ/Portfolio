@@ -18,7 +18,7 @@ export async function Navbar() {
   const config = await API.site.navbar.getConfig();
 
   return (
-    <nav className="w-full flex flex-row justify-between px-8 py-4">
+    <nav className="w-full h-24 flex flex-row justify-between items-center px-24 fixed top-0 left-0 z-50">
       <Link
         href={"/"}
         className="text-ctp-peach hover:text-ctp-peach-900 transition-all duration-300"

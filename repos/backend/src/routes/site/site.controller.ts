@@ -1,6 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
 import { SiteService } from './site.service.js';
-import type { ISiteNavbarConfig } from '../../types/api/site.js';
+import type {
+  ISiteHeroConfig,
+  ISiteNavbarConfig,
+} from '../../types/api/site.js';
 
 @Controller('/site')
 export class SiteController {
@@ -9,5 +12,10 @@ export class SiteController {
   @Get('/navbar')
   async getNavbarConfig(): Promise<ISiteNavbarConfig> {
     return await this.siteService.getNavbarConfig();
+  }
+
+  @Get('/hero')
+  async getHeroConfig(): Promise<ISiteHeroConfig> {
+    return await this.siteService.getHeroConfig();
   }
 }
