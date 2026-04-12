@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Navbar } from "./Navbar";
 
 interface IAppShellProps {
   children: ReactNode | ReactNode[];
@@ -7,6 +8,7 @@ interface IAppShellProps {
 export function AppShell(props: IAppShellProps) {
   return (
     <div className="w-screen min-h-screen bg-ctp-mantle text-ctp-text">
+      <Navbar />
       <main>{props.children}</main>
     </div>
   );
