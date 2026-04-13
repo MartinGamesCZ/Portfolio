@@ -2,8 +2,6 @@
 
 import { useEffect, useRef } from "react";
 
-const text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus metus urna, finibus at auctor quis, aliquam eu leo. Fusce sagittis rhoncus lectus, ac aliquet nunc laoreet sit amet. Sed porttitor quis augue maximus pharetra. Quisque sollicitudin, est a congue ultrices, nunc neque vulputate mi, id malesuada risus massa quis sem. Donec id pulvinar ligula. Mauris venenatis ut elit id bibendum. Aliquam nec ipsum ut nibh dignissim efficitur eget sit amet justo. Phasellus eget ornare augue. Mauris sollicitudin nec tellus vel maximus. Vivamus eleifend in justo egestas gravida. Donec ac metus vitae ipsum sodales elementum. Quisque sollicitudin condimentum hendrerit. Donec quis turpis turpis. Fusce eu ex sollicitudin, porta elit et, venenatis ex. Nulla at scelerisque urna. Etiam tincidunt urna non vulputate interdum.`;
-
 const FONT_SIZE = 16;
 const LINE_HEIGHT = 24;
 const FONT = `${FONT_SIZE}px monospace`;
@@ -13,7 +11,11 @@ const RADIUS = 120;
 
 type Char = { ch: string; x: number; y: number };
 
-export function HeroBackground() {
+interface IHeroBackgroundProps {
+  text: string;
+}
+
+export function HeroBackground(props: IHeroBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef({ x: -9999, y: -9999 });
   const rafRef = useRef<number>(0);
@@ -52,7 +54,7 @@ export function HeroBackground() {
       for (let r = 0; r < rows; r++) {
         for (let c = 0; c < cols; c++) {
           chars.push({
-            ch: text[idx++ % text.length],
+            ch: props.text[idx++ % props.text.length],
             x: c * charW,
             y: r * LINE_HEIGHT + FONT_SIZE,
           });

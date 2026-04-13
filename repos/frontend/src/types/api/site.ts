@@ -27,4 +27,5 @@ export interface ISiteHeroConfig {
   firstButton: ISiteHeroButtonConfig;
   secondButton: ISiteHeroButtonConfig;
   sshCommand: string;
+  backgroundPhrases: string[];
 }
