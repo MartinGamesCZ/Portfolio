@@ -2,16 +2,17 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: app-portfolio
 resources:
-- deployment.yaml
-- service.yaml
-- ingress.yaml
-- namespace.yaml
-- serviceaccount.yaml
-- redirect-middleware.yaml
-- deployment-backend.yaml
-- service-backend.yaml
-- ingress-backend.yaml
-- ingress-backend-ssh.yaml
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+  - namespace.yaml
+  - serviceaccount.yaml
+  - redirect-middleware.yaml
+  - deployment-backend.yaml
+  - service-backend.yaml
+  - ingress-backend.yaml
+  - ingress-backend-ssh.yaml
+  - secret-ssh.yaml
 images:
 - name: cr.cloud.martinpetr.dev/portfolio-backend
   newName: cr.cloud.martinpetr.dev/portfolio-backend
